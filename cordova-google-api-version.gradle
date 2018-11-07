@@ -23,5 +23,6 @@ println("+-----------------------------------------------------------------");
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
         if (details.requested.group in GOOGLE_APIS) { details.useVersion GOOGLE_API_VERSION }
+        if (details.requested.name == 'google-services') { details.useVersion '4.1.0' }
     }
 }
